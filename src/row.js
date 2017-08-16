@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class Any extends Component {
+export default class Row extends Component {
     componentDidMount() {
         this.props.updateRowHeight(this.props.index, this.ref.getBoundingClientRect().height);
     }
@@ -16,9 +16,9 @@ export default class Any extends Component {
     }
 }
 
-Any.propTypes = {
+Row.propTypes = {
     updateRowHeight: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
-    children: PropTypes.array.isRequired,
+    children: PropTypes.object.isRequired,
 };
 

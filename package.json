@@ -1,7 +1,17 @@
 {
+  "name": "react-list-any-height",
+  "version": "0.0.1",
+  "description": "react-list-any-height",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangtao0101/react-list-any-height.git"
+  },
+  "peerDependencies": {
+    "react": "^15.3.0 || ^16.0.0-alpha",
+    "react-dom": "^15.3.0 || ^16.0.0-alpha"
+  },
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "gh-pages": "^1.0.0"
   },
   "devDependencies": {
     "@storybook/react": "^3.2.4",
@@ -10,10 +20,13 @@
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.2.1"
+    "eslint-plugin-react": "^7.2.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy": "npm run build-storybook && gh-pages -d storybook-static"
   }
 }

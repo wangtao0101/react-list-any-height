@@ -3,7 +3,7 @@ const opts = {
     CLOSEST_HIGHER: 2,
 };
 
-export default function (array, item, opt) {
+export default function binaryIndexSearch(array, item, opt) {
     let index;
 
     let high = array.length - 1;
