@@ -27,6 +27,17 @@ export default class AnyHeight extends Component {
         this.computer.updateRowHeightAfterScroll(beginIndex, endIndex);
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.dataSource !== this.props.dataSource
+            || nextProps.minRowHeight !== this.props.minRowHeight) {
+            const { dataSource, minRowHeight, height, preloadBatchSize } = nextProps;
+            this.computer = new Computer(minRowHeight, dataSource.length, height);
+            this.setState(Object.assign({
+                isScrolling: false,
+            }, this.computer.getDisplayData(this.lastScrollTop, preloadBatchSize, 0, 0)));
+        }
+    }
+
     componentDidUpdate() {
         if (this.state.isScrolling) {
             const { beginIndex, endIndex } = this.state;
