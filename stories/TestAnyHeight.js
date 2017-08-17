@@ -29,7 +29,7 @@ export default () => {
 
     return (
         <AnyHeight
-            length={dataSource.length}
+            dataSource={dataSource}
             height={600}
             minRowHeight={100}
             style={{

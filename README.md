@@ -18,7 +18,7 @@ yarn add react-list-any-height
 As we don't know the height of all row before the row had been rendered, we figure out the height of contianer by using minRowHeight.
 ```
 <AnyHeight
-    length={100}
+    dataSource={dataSource}
     minRowHeight={100}
     rowRender={(index, style) => (
         <div className="hover-row" style={style)}></div>
@@ -34,8 +34,8 @@ minRowHeight should be set reasonable, otherwise if you scroll to end fastly and
 
 
 ## Api
-### length
-The number of the item in list, isRequired
+### dataSource
+the data array, isRequired
 
 ### minRowHeight
 The minimum height of all rows, isRequired

@@ -7,9 +7,9 @@ export default class AnyHeight extends Component {
     constructor(props) {
         super(props);
 
-        const { length, minRowHeight, height, preloadBatchSize } = props;
+        const { dataSource, minRowHeight, height, preloadBatchSize } = props;
 
-        this.computer = new Computer(minRowHeight, length, height);
+        this.computer = new Computer(minRowHeight, dataSource.length, height);
 
         this.state = Object.assign({
             isScrolling: false,
@@ -122,7 +122,7 @@ AnyHeight.defaultProps = {
 };
 
 AnyHeight.propTypes = {
-    length: PropTypes.number.isRequired,
+    dataSource: PropTypes.array.isRequired,
     minRowHeight: PropTypes.number.isRequired,
     height: PropTypes.number,
     preloadBatchSize: PropTypes.number,
